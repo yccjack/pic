@@ -1,0 +1,16 @@
+{
+  "id": "1721556",
+  "name": "1",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4986916",
+      "name": "旋转",
+      "font_class": "xuanzhuan",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    }
+  ]
+}
