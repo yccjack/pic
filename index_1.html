@@ -223,30 +223,27 @@
 
        }
        //4.输出所有的海报
-       var data=data;
-       var count=0;
        function addPhotos(){
           var template=g('#wrap').innerHTML;
           var html=[];
           var nav=[]
-           var randomArrayElements = getRandomArrayElements(data,15);
+           var randomArrayElements = getRandomArrayElements(data,10);
           for(s in randomArrayElements){
               // if(count>10){
               //     break;
               // }
               var _html=template
                              .replace('{{index}}',s)
-                             .replace('{{img}}',data[s].img)
-                             .replace('{{caption}}',data[s].caption)
-                             .replace('{{desc}}',data[s].desc)
+                             .replace('{{img}}',randomArrayElements[s].img)
+                             .replace('{{caption}}',randomArrayElements[s].caption)
+                             .replace('{{desc}}',randomArrayElements[s].desc)
             html.push(_html);
             nav.push('<span id="nav_'+s+'" onclick="turn(g(\'#photo_'+s+'\'))" class="i">&nbsp</span>')
-            count=count+1;
 
           }
           html.push('<div class="nav">'+nav.join('')+'</div>')
           g('#wrap').innerHTML=html.join('')
-          rsort(random([0,data.length]))
+          rsort(random([0,randomArrayElements.length]))
        }
        addPhotos()
        //6.计算左右分区的范围{lef:{x;[min,max],y:[]},right:{}}

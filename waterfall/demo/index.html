@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>fall demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            overflow: hidden auto;
+            padding: 20px;
+        }
+
+        .img-item {
+            border-radius: 4px;
+            /* overflow: hidden; */
+            flex: auto;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="fall-box"></div>
+</main>
+<script src="../dist/waterfall.min.js"></script>
+<script src='../../js/data.js'></script>
+<script>
+    var images = new Array();
+    for (s in data) {
+        images[s] = 'https://mysticalyu.gitee.io/pic/img/' + data[s].img
+    }
+    waterfall(".fall-box", {
+        datas: images,
+        direction: "h",
+        parentBox: "main",
+        spacing: 20,
+        rowClass: "img-row",
+        itemClass: "img-item",
+    })
+</script>
+</body>
+
+</html>

@@ -85,7 +85,7 @@
     <footer class="margin-tb-3">
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Sitename 2020</p>
+                <p>Copyright &copy; MysticalYcc 2020</p>
             </div>
         </div>
     </footer>
@@ -124,16 +124,15 @@
     function addPhotos() {
         var htmlText = '';
         var count = 0;
-
-        for (s in data) {
+        var randomArrayElements = getRandomArrayElements(data,8);
+        for (s in randomArrayElements) {
             if(count==0){
                 htmlText+='<div class="row margin-b-2">';
             }
             htmlText += '    <div class="col-sm-3">' +
-                '<img class="img-responsive center-block" onclick="cli(this)" src="https://mysticalyu.gitee.io/pic/img/' + data[s].img + ' " alt="">'
+                '<img class="img-responsive center-block" onclick="cli(this)" src="https://mysticalyu.gitee.io/pic/img/' + randomArrayElements[s].img + ' " alt="">'
                 + '<div class="caption">'
                 + '   <h4><a href="#"></a></h4>'
-                + ' <p>' + "https://mysticalyu.gitee.io/pic/img/v2-4a5c6f931f59e40dbdba8104d451f15e_r.jpg" + '</p>'
                 + '</div></div>'
             count = count+1;
             if(count==4){
@@ -145,6 +144,15 @@
     }
 
     addPhotos();
+    function getRandomArrayElements(arr, count) {
+        var reslut = [];
+        for (var i = 0; i < count; ++i) {
+            var random = Math.floor(Math.random() * arr.length);
+            reslut.push(arr[random]);
+            arr.splice(random,1);
+        }
+        return reslut;
+    }
 </script>
 </body>
 </html>

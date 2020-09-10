@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" lang="en" content="MysticalYcc Gallery">
+    <meta name="author" content="MysticalYcc">
+    <meta name="robots" content="index, follow">
+
+    <!-- icons -->
+    <link rel="icon" type="ico/jpg" sizes="144x144" href="https://gschaos.club/ico/1.jpg"/>
+    <link rel="apple-touch-icon" type="ico/png" sizes="144x144" href="https://gschaos.club/ico/1.jpg"/>
+
+    <!-- Bootstrap Core CSS file -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Override CSS file - add your own CSS rules -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Conditional comment containing JS files for IE6 - 8 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .post-content img, #img-modal img {
+            width: 180%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">MysticalYcc Gallery</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Gallery</a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<!-- /.navbar -->
+
+<!-- Page Content -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header">
+                <h1>MysticalYcc Gallery</h1>
+                <p>Posted by <span class="glyphicon glyphicon-user"></span> <a href="#">MysticalYcc</a> on <span
+                        class="glyphicon glyphicon-time"></span> 12 Sep 2020 10:00 am</p>
+            </div>
+        </div>
+    </div>
+
+
+    <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%"
+        color=#987cb9 SIZE=1>
+
+    <main>
+        <div class="fall-box"></div>
+    </main>
+    <!-- /.row -->
+
+    <hr>
+    <footer class="margin-tb-3">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; MysticalYcc 2020</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div id="img-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:90%;">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+
+<!-- /.container-fluid -->
+
+<!-- JQuery scripts -->
+<script src="js/jquery-1.11.2.min.js"></script>
+
+<!-- Bootstrap Core scripts -->
+<script src="js/bootstrap.min.js"></script>
+<script src='./js/data.js'></script>
+<script src="waterfall/dist/waterfall.min.js"></script>
+<script>
+
+    function cli(source) {
+        var img_html = $(source).prop("outerHTML");
+        $('#img-modal .modal-content').html(img_html);
+        $('#img-modal').modal('show');
+        // 点击隐藏 modal
+        $('#img-modal .modal-content img').click(function () {
+            $('#img-modal').modal('hide');
+        })
+    }
+
+    var images = new Array();
+    for (s in data) {
+        images[s] = 'https://mysticalyu.gitee.io/pic/img/' + data[s].img
+    }
+    waterfall(".fall-box", {
+        datas: images,
+        direction: "h",
+        parentBox: "main",
+        spacing: 20,
+        rowClass: "img-row",
+        itemClass: "img-item",
+    })
+</script>
+</body>
+</html>
+
