@@ -1,31 +1,9 @@
 
 
-
-
-title: PicGo + Gitee(码云)实现markdown图床
-categories: 图床
-tags: [图床] 
-date: 2020-09-07
-cover: https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg
-
----
-
-
-
-
-PicGo + Gitee(码云)实现markdown图床
-
-
-![img]( https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg)
-
-<!-- more -->
-
-
-
 # PicGo + Gitee(码云)实现markdown图床
 
 ## PicGo + Gitee(码云)实现markdown图床
-
+![img]( https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg)
 ## 1. 安装
 
 - PicGo
