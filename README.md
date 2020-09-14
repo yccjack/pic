@@ -10,13 +10,13 @@ cover: https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg
 
 ---
 
-![]( https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg)
 
 
 
 PicGo + Gitee(码云)实现markdown图床
 
 
+![img]( https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg)
 
 <!-- more -->
 
