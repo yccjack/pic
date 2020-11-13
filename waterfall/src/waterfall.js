@@ -121,13 +121,13 @@
             if (typeof item === "string") {
                 imageList += `
                     <div class="fall-item">
-                        <img alt="${item}" src="${item}"/>
+                        <img alt="${item}" src="${item}" onclick="cli()"/>
                     </div>
                 `
             } else {
                 imageList += `
                     <div class="fall-item">
-                        <img alt="${item.url}" src="${item.url}"/>
+                        <img alt="${item.url}" src="${item.url}" onclick="cli()"/>
                     </div>
                 `
             }

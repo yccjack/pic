@@ -44,7 +44,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Gallery</a>
+            <a class="navbar-brand" href="">Gallery</a>
+            <a class="navbar-brand" href="all.html">Preview All</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -88,7 +89,7 @@
 
 <div id="img-modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
      aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="max-width:90%;">
+    <div class="modal-dialog modal-lg" style="max-height:100%;">
         <div class="modal-content">
 
         </div>
@@ -106,20 +107,40 @@
 <script src='./js/data.js'></script>
 <script src="waterfall/dist/waterfall.min.js"></script>
 <script>
+    $(function(){
+        var $modal = $('#img-modal');
+        // 测试 bootstrap 居中
+        $modal.on('show.bs.modal', function(){
+            var $this = $(this);
+            var $modal_dialog = $this.find('.modal-dialog');
+            // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
+            $this.css('display', 'block');
+            $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2) });
+        });
 
+    });
     function cli(source) {
-        var img_html = $(source).prop("outerHTML");
+        let clone = $(source).clone();
+        clone.removeAttr("style");
+        // var imgSrc = clone.attr("src");
+        // let newSrc = 'img/'+imgSrc.substr(imgSrc.indexOf("/")+1,imgSrc.length);
+        // clone.removeAttr("src");
+        // clone.attr("src",newSrc);
+        clone.attr("class","img-responsive center-block");
+
+        var img_html = clone.prop("outerHTML");
         $('#img-modal .modal-content').html(img_html);
         $('#img-modal').modal('show');
         // 点击隐藏 modal
         $('#img-modal .modal-content img').click(function () {
             $('#img-modal').modal('hide');
+            clone.remove();
         })
     }
 
     var images = new Array();
     for (s in data) {
-        images[s] = 'https://mysticalyu.gitee.io/pic/img/' + data[s].img
+        images[s] = 'img_min/' + data[s].img
     }
     waterfall(".fall-box", {
         datas: images,

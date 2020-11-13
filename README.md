@@ -1,9 +1,35 @@
 
 
+
+
+title: PicGo + Gitee(码云)实现markdown图床
+categories: 图床
+tags: [图床] 
+date: 2020-09-07
+cover: https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg
+
+---
+
+![]( https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg)
+
+
+
+PicGo + Gitee(码云)实现markdown图床
+
+
+
+<!-- more -->
+
+
+
+效果图：
+
+![gallery](https://gitee.com/MysticalYu/pic/raw/master/hexo/gallery.gif)
+
 # PicGo + Gitee(码云)实现markdown图床
 
 ## PicGo + Gitee(码云)实现markdown图床
-![img]( https://mysticalyu.gitee.io/pic/img/euginnx-_wu-09.jpg)
+
 ## 1. 安装
 
 - PicGo
@@ -175,4 +201,4 @@ https://mysticalyu.gitee.io/pic/img/20200409141450-lee-gh-2.jpg
 
 GiteePage读取的是仓库的index.html页面，所以我们可以下载一些画廊的模板来放在index页面，至于画廊如何读取上传的图片就自己琢磨吧。
 
-附上自己的画廊地址: https://mysticalyu.gitee.io/pic/
+<font color=red>附上自己的画廊地址:https://www.gschaos.club/gallery/</font>
